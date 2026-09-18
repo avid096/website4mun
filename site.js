@@ -1,4 +1,3 @@
-/* Update these values once when conference details are final. */
 const conference = { season: 'Spring 2026', date: null, registration: 'Opening soon' };
 
 document.addEventListener('DOMContentLoaded', () => {

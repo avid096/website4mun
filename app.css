@@ -1,1 +1,386 @@
-.admin-trigger{border:1px solid var(--red);background:transparent;color:var(--red);padding:10px 13px;font:800 11px var(--sans);cursor:pointer}.hero-group{min-height:430px;display:grid;place-items:center;position:relative;isolation:isolate;background:center/cover var(--group-image)}.hero-group:before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.79);z-index:-1}.hero-group h1{font:700 clamp(46px,7vw,82px)/1 var(--serif);letter-spacing:-.06em;text-align:center;margin:0}.hero-group p{font:400 18px/1.7 var(--serif);max-width:590px;text-align:center;margin:20px auto 0}.governmun{background:var(--rose)}.governmun-head{display:flex;justify-content:space-between;align-items:end;gap:35px}.carousel-controls{display:flex;gap:8px}.carousel-controls button{width:42px;height:42px;border:1px solid var(--red);background:#fff;color:var(--red);font-size:20px;cursor:pointer}.profile-carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:32px 0 10px;scrollbar-width:none}.profile-carousel::-webkit-scrollbar{display:none}.profile{background:#fff;min-width:calc((100% - 40px)/3);scroll-snap-align:start;border:1px solid var(--line)}.profile-photo{height:245px;background:center/cover var(--profile-image)}.profile-copy{padding:22px}.profile-copy h3{font:700 22px/1.25 var(--serif);margin:0}.profile-copy .role{color:var(--red);font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin:8px 0 20px}.profile-copy dl{margin:0;border-top:1px solid var(--line);padding-top:13px;font-size:12px;line-height:1.8}.profile-copy dt{display:inline;font-weight:800}.profile-copy dd{display:inline;margin:0}.committee-grid{grid-template-columns:repeat(3,1fr)}.committee{min-height:310px}.committee-image{height:125px;background:center/cover var(--committee-image);margin:-26px -26px 20px}.committee h3{margin:13px 0}.committee .topic{font:400 14px/1.6 var(--serif);color:var(--red)}.committee a{display:block}.committee-dialog{max-width:760px;padding:0;overflow:hidden}.dialog-image{height:240px;background:center/cover var(--dialog-image)}.dialog-copy{padding:35px 42px 42px}.dialog-copy h2{margin:14px 42px 14px 0}.dialog-copy p{max-width:600px}.guide-button{display:inline-block;background:var(--red);color:#fff;padding:14px 17px;margin-top:14px;font-size:12px;font-weight:800}.admin-dialog{width:min(1000px,calc(100% - 28px));max-height:90vh;border:0;padding:0;background:var(--cream);color:var(--ink);box-shadow:0 20px 80px rgba(0,0,0,.4)}.admin-dialog::backdrop{background:rgba(20,15,15,.75)}.admin-header{position:sticky;top:0;z-index:1;background:var(--red);color:#fff;padding:20px 28px;display:flex;justify-content:space-between;align-items:center}.admin-header h2{font:700 25px var(--serif);margin:0}.admin-close{border:0;background:transparent;color:#fff;font-size:30px;cursor:pointer}.admin-form{padding:30px}.admin-section{border-top:2px solid var(--red);padding:22px 0;margin-top:30px}.admin-section h3{font:700 25px var(--serif);margin:0 0 18px}.admin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.admin-field{display:block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.admin-field input,.admin-field textarea{display:block;width:100%;border:1px solid var(--line);background:#fff;padding:10px;margin-top:6px;color:var(--ink);font:14px var(--sans);text-transform:none;letter-spacing:normal}.admin-field textarea{min-height:85px;resize:vertical}.admin-item{background:#fff;border:1px solid var(--line);padding:20px;margin:14px 0}.admin-item-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.admin-item-top b{font:700 18px var(--serif)}.remove-item,.add-item,.save-admin{border:0;background:var(--red);color:#fff;padding:11px 14px;font:800 11px var(--sans);cursor:pointer}.remove-item{background:#3d3733}.add-item{background:var(--ink)}.save-admin{position:sticky;bottom:0;width:100%;margin-top:28px;font-size:13px}.login-card{width:min(420px,calc(100% - 32px));border:0;padding:34px;background:var(--cream)}.login-card h2{font:700 30px var(--serif);margin-top:0}.login-card input{width:100%;border:1px solid var(--line);padding:13px;font:15px var(--sans);margin:10px 0 16px}.login-error{color:var(--red);font-size:12px;min-height:20px}@media(max-width:720px){.profile{min-width:88%}.governmun-head{align-items:start;flex-direction:column}.committee-grid{grid-template-columns:1fr}.admin-grid{grid-template-columns:1fr}.admin-form{padding:20px}.dialog-copy{padding:27px}.profile-photo{height:220px}}
+.admin-trigger {
+    border: 1px solid var(--red);
+    background: transparent;
+    color: var(--red);
+    padding: 10px 13px;
+    font: 800 11px var(--sans);
+    cursor: pointer
+}
+
+.hero-group {
+    min-height: 430px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    isolation: isolate;
+    background: center/cover var(--group-image)
+}
+
+.hero-group:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, .79);
+    z-index: -1
+}
+
+.hero-group h1 {
+    font: 700 clamp(46px, 7vw, 82px)/1 var(--serif);
+    letter-spacing: -.06em;
+    text-align: center;
+    margin: 0
+}
+
+.hero-group p {
+    font: 400 18px/1.7 var(--serif);
+    max-width: 590px;
+    text-align: center;
+    margin: 20px auto 0
+}
+
+.governmun {
+    background: var(--rose)
+}
+
+.governmun-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 35px
+}
+
+.carousel-controls {
+    display: flex;
+    gap: 8px
+}
+
+.carousel-controls button {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--red);
+    background: #fff;
+    color: var(--red);
+    font-size: 20px;
+    cursor: pointer
+}
+
+.profile-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 32px 0 10px;
+    scrollbar-width: none
+}
+
+.profile-carousel::-webkit-scrollbar {
+    display: none
+}
+
+.profile {
+    background: #fff;
+    min-width: calc((100% - 40px)/3);
+    scroll-snap-align: start;
+    border: 1px solid var(--line)
+}
+
+.profile-photo {
+    height: 245px;
+    background: center/cover var(--profile-image)
+}
+
+.profile-copy {
+    padding: 22px
+}
+
+.profile-copy h3 {
+    font: 700 22px/1.25 var(--serif);
+    margin: 0
+}
+
+.profile-copy .role {
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    margin: 8px 0 20px
+}
+
+.profile-copy dl {
+    margin: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 13px;
+    font-size: 12px;
+    line-height: 1.8
+}
+
+.profile-copy dt {
+    display: inline;
+    font-weight: 800
+}
+
+.profile-copy dd {
+    display: inline;
+    margin: 0
+}
+
+.committee-grid {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.committee {
+    min-height: 310px
+}
+
+.committee-image {
+    height: 125px;
+    background: center/cover var(--committee-image);
+    margin: -26px -26px 20px
+}
+
+.committee h3 {
+    margin: 13px 0
+}
+
+.committee .topic {
+    font: 400 14px/1.6 var(--serif);
+    color: var(--red)
+}
+
+.committee a {
+    display: block
+}
+
+.committee-dialog {
+    max-width: 760px;
+    padding: 0;
+    overflow: hidden
+}
+
+.dialog-image {
+    height: 240px;
+    background: center/cover var(--dialog-image)
+}
+
+.dialog-copy {
+    padding: 35px 42px 42px
+}
+
+.dialog-copy h2 {
+    margin: 14px 42px 14px 0
+}
+
+.dialog-copy p {
+    max-width: 600px
+}
+
+.guide-button {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    padding: 14px 17px;
+    margin-top: 14px;
+    font-size: 12px;
+    font-weight: 800
+}
+
+.admin-dialog {
+    width: min(1000px, calc(100% - 28px));
+    max-height: 90vh;
+    border: 0;
+    padding: 0;
+    background: var(--cream);
+    color: var(--ink);
+    box-shadow: 0 20px 80px rgba(0, 0, 0, .4)
+}
+
+.admin-dialog::backdrop {
+    background: rgba(20, 15, 15, .75)
+}
+
+.admin-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--red);
+    color: #fff;
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.admin-header h2 {
+    font: 700 25px var(--serif);
+    margin: 0
+}
+
+.admin-close {
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer
+}
+
+.admin-form {
+    padding: 30px
+}
+
+.admin-section {
+    border-top: 2px solid var(--red);
+    padding: 22px 0;
+    margin-top: 30px
+}
+
+.admin-section h3 {
+    font: 700 25px var(--serif);
+    margin: 0 0 18px
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px
+}
+
+.admin-field {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase
+}
+
+.admin-field input,
+.admin-field textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--line);
+    background: #fff;
+    padding: 10px;
+    margin-top: 6px;
+    color: var(--ink);
+    font: 14px var(--sans);
+    text-transform: none;
+    letter-spacing: normal
+}
+
+.admin-field textarea {
+    min-height: 85px;
+    resize: vertical
+}
+
+.admin-item {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 20px;
+    margin: 14px 0
+}
+
+.admin-item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px
+}
+
+.admin-item-top b {
+    font: 700 18px var(--serif)
+}
+
+.remove-item,
+.add-item,
+.save-admin {
+    border: 0;
+    background: var(--red);
+    color: #fff;
+    padding: 11px 14px;
+    font: 800 11px var(--sans);
+    cursor: pointer
+}
+
+.remove-item {
+    background: #3d3733
+}
+
+.add-item {
+    background: var(--ink)
+}
+
+.save-admin {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    margin-top: 28px;
+    font-size: 13px
+}
+
+.login-card {
+    width: min(420px, calc(100% - 32px));
+    border: 0;
+    padding: 34px;
+    background: var(--cream)
+}
+
+.login-card h2 {
+    font: 700 30px var(--serif);
+    margin-top: 0
+}
+
+.login-card input {
+    width: 100%;
+    border: 1px solid var(--line);
+    padding: 13px;
+    font: 15px var(--sans);
+    margin: 10px 0 16px
+}
+
+.login-error {
+    color: var(--red);
+    font-size: 12px;
+    min-height: 20px
+}
+
+@media(max-width:720px) {
+    .profile {
+        min-width: 88%
+    }
+
+    .governmun-head {
+        align-items: start;
+        flex-direction: column
+    }
+
+    .committee-grid {
+        grid-template-columns: 1fr
+    }
+
+    .admin-grid {
+        grid-template-columns: 1fr
+    }
+
+    .admin-form {
+        padding: 20px
+    }
+
+    .dialog-copy {
+        padding: 27px
+    }
+
+    .profile-photo {
+        height: 220px
+    }
+}
+
+.admin-logout {
+    margin-left: auto;
+    margin-right: 16px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font: 800 11px var(--sans);
+    cursor: pointer
+}
